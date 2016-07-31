@@ -1,14 +1,13 @@
 # include<stdio.h>
 # include<graphics.h>
 # include<math.h>
+
 void pixel(int xc,int yc,int x,int y);
 
 int main(){
 	int gd=DETECT,gm;
 	int r,x,y,p,xc=320,yc=240;
-	
-	
-	
+		
 	printf("Enter the value for xc ");
 	scanf("%d",&xc);
 	printf("Enter the value for yc ");
@@ -16,7 +15,7 @@ int main(){
 	printf("Enter the radius ");
 	scanf("%d",&r);
 
-	initgraph(&gd,&gm,"C:\\TC\\BGI");
+	initgraph(&gd,&gm,"");
 	cleardevice();
 	
 	x=0;
@@ -31,24 +30,23 @@ int main(){
 			p=(p+(4*x)+6);
 		}
 		else{
-		y=y-1;
-		p=p+((4*(x-y)+10));
+			y=y-1;
+			p=p+((4*(x-y)+10));
 		}
 		pixel(xc,yc,x,y);
-		
-	
-		}
+	}
+
 	getch();
 	closegraph();
 }
-void pixel(int xc,int yc,int x,int y)
-{
-            putpixel(xc+x,yc-y,1);
-			putpixel(xc-x,yc-y,1);
-			putpixel(xc+x,yc+y,1);
-			putpixel(xc-x,yc+y,1);
-			putpixel(xc+y,yc-x,1);
-			putpixel(xc-y,yc-x,1);
-			putpixel(xc+y,yc+x,1);
-			putpixel(xc-y,yc+x,1);
+
+void pixel(int xc,int yc,int x,int y){
+	putpixel(xc+x,yc-y,1);
+	putpixel(xc-x,yc-y,1);
+	putpixel(xc+x,yc+y,1);
+	putpixel(xc-x,yc+y,1);
+	putpixel(xc+y,yc-x,1);
+	putpixel(xc-y,yc-x,1);
+	putpixel(xc+y,yc+x,1);
+	putpixel(xc-y,yc+x,1);
 }
